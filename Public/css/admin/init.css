@@ -1,0 +1,297 @@
+body,p,div,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,form,input,select,table,tr,td,th,frame,frameset{
+    margin : 0;
+    padding : 0;
+    font-family: '微软雅黑','黑体';
+    color: #5b5b5b;
+}
+li{
+	list-style: none;
+}
+.logo{
+	height: 60px;
+	width: 50%;
+	float: left;
+	line-height: 60px;
+	font-size: 30px;
+	color: #fff;
+	padding-left: 10px;
+}
+.user{
+	height: 60px;
+	width: 300px;
+	float: right;
+	text-align: right;
+	padding-right: 10px;
+	color:#fff;
+}
+.user a{
+	color:#fff;
+}
+.menu{
+	margin: 0 auto;
+	margin-top: 15px;
+	width: 180px;
+}
+.menu .p{
+	height: 25px;
+	line-height: 25px;
+	padding: 10px 0;
+	text-align: center;
+	background: #ccc;
+	margin: 5px 0;
+	border-radius: 15px;
+	cursor:pointer;
+}
+.menu-list{
+	display: none;
+}
+.menu-list li{
+	height: 25px;
+	line-height: 25px;
+	padding: 10px 0;
+	text-align: center;
+	/*background: #ccc;*/
+	border:1px solid #ccc;
+	margin: 5px 0;
+	border-radius: 15px;
+	cursor: pointer;
+}
+
+.menu-list li:hover{
+	border:1px dashed #000;
+}
+.click{
+	border:1px dashed #000;
+}
+
+center{
+	line-height: 30px;
+}
+
+.content{
+	padding: 10px;
+}
+
+.content p{
+	padding:10px; 
+}
+
+.content label{
+	display: block;
+	width: 100px;
+	float: left;
+	height: 30px;
+	line-height: 30px;
+	font-weight: bold;
+}
+
+.content input[type='text'],.content input[type='password']{
+	width: 30%;
+	height: 30px;
+	border-radius: 5px;
+	padding:0 5px;
+	box-shadow: none;
+	border:0;
+	border:1px solid #ccc;
+	outline: none;
+}
+.content select{
+	width: 30%;
+	height: 30px;
+	border-radius: 5px;
+	box-shadow: none;
+	border:0;
+	border:1px solid #ccc;
+	cursor: pointer;
+	outline: none;
+}
+
+.content textarea{
+	width: 45%;
+	height: 180px;
+	border-radius: 5px;
+	box-shadow: none;
+	border:0;
+	border:1px solid #ccc;
+	outline: none;
+	padding: 10px;
+}
+.title{
+	padding: 10px 0;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.mess{
+	padding: 10px;
+	border:1px solid #ccc;
+	background-color: #fff;
+	font-size: 16px;
+	border-radius: 5px;
+	color:orange;
+}
+
+.content input[type='radio'],input[type='checkbox']{
+	width: 50px;
+	height: 20px;
+	line-height: 30px;
+	box-shadow: none;
+	outline: none;
+	cursor: pointer;
+	position: relative;
+	top: 5px;
+}
+.content input[type='submit'],input[type='button'],input[type='reset']{
+	border:0;
+	padding:7px 25px;
+	cursor: pointer;
+	background-color: #0080ff;
+	border-radius: 5px;
+	color:#fff;
+	font-size: 14px;
+}
+
+.content input[type='submit']:hover,input[type='button']:hover,input[type='reset']:hover{
+	background-color: #0000ff;
+	color:#ccc;
+}
+
+.tree_title{
+	float: left;
+}
+
+.tree-content{
+	width: 50%;
+	padding: 10px 0;
+	text-align: right;
+}
+
+.tree-content li{
+	padding:10px; 
+}
+
+.light-row{
+	background-color: #fff;
+}
+
+
+.cate-list{
+	margin-top: 10px;
+	border:1px solid #ccc;
+}
+
+.cate-list li {
+	padding:10px;
+	font-size: 16px;
+}
+.cate-list li a{
+	float: right;
+}
+
+.table-list{
+	margin-top:10px;
+}
+.table-list table{
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.table-list table th,.table-list table td{
+	padding:10px;
+	border:1px solid #ccc;
+}
+.table-list table th{
+	background: #ddd;
+}
+
+.table-list table tr{
+	background: #fff;
+}
+
+.table-list table tr:hover{
+	background: #ddd;
+}
+
+.table-list table td a{
+	margin-right:10px;
+}
+
+.page{
+	padding: 30px 0 20px;
+	text-align: right;
+}
+
+.page a{
+	color:#fff;
+	padding: 5px 10px;
+	background-color:#0080ff; 
+	border-radius:5px;
+	margin-right: 5px;
+}
+.page a:hover{
+	background-color: #0033CC;
+}
+
+.page .on{
+	background-color: #0033CC;
+}
+
+.tag-list{
+	float: left;
+	padding:5px 10px;
+	background: #0080ff;
+	color:#fff;
+	border-radius: 5px;
+	margin:0 5px 5px 0;
+}
+.tag-list span{
+	margin-left: 10px;
+	cursor: pointer;
+}
+
+.clear{
+	clear: both;
+}
+
+#tags label{
+	width: 110px;
+}
+
+/*登陆界面*/
+
+.login{
+	width: 500px;
+	height: 280px;
+	background: #fff;
+	position: absolute;
+	top:50%;
+	left: 50%;
+	margin-top:-129.5px;
+	margin-left:-250px;
+	border-radius: 5px;
+	box-shadow: 1px 1px 3px #ddd;
+}
+.login h2{
+	text-align: center;
+	padding:25px 0 30px;
+}
+.login .content input[type="text"],.login .content input[type='password']{
+	width: 65%;
+}
+.login .content .sub{
+	text-align:right;
+	padding-right: 15%;
+}
+.message{
+	padding-left:110px;
+	color:red;
+}
+
+.big-img{
+	position: absolute;
+}
+.pl img{
+	height: 100px;
+	margin:0 10px 10px 0;
+	cursor: pointer;
+}
