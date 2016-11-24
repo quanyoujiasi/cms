@@ -5,7 +5,6 @@
  * Date: 14-04-09
  * Time: 上午10:17
  */
-require '../../../config.php';
 include "Uploader.class.php";
 
 /* 判断类型 */
@@ -31,7 +30,7 @@ $start = isset($_GET['start']) ? htmlspecialchars($_GET['start']) : 0;
 $end = $start + $size;
 
 /* 获取文件列表 */
-$path = WEB_PATH . (substr($path, 0, 1) == "/" ? "":"/") . $path;
+$path = $_SERVER['DOCUMENT_ROOT'] . (substr($path, 0, 1) == "/" ? "":"/") . $path;
 $files = getfiles($path, $allowFiles);
 if (!count($files)) {
     return json_encode(array(
@@ -82,7 +81,7 @@ function getfiles($path, $allowFiles, &$files = array())
             } else {
                 if (preg_match("/\.(".$allowFiles.")$/i", $file)) {
                     $files[] = array(
-                        'url'=> substr($path2, strlen(WEB_PATH)),
+                        'url'=> substr($path2, strlen($_SERVER['DOCUMENT_ROOT'])),
                         'mtime'=> filemtime($path2)
                     );
                 }

@@ -7,4 +7,5 @@ return array(
     'DB_USER'               =>  'root',      // 用户名
     'DB_PWD'                =>  '',          // 密码
     'DB_PORT'               =>  '3306',        // 端口
+    'SHOW_PAGE_TRACE'       => true,
 );

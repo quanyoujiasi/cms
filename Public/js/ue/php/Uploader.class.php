@@ -1,5 +1,5 @@
 <?php
-include '../../../config.php';
+
 /**
  * Created by JetBrains PhpStorm.
  * User: taoqili
@@ -326,7 +326,7 @@ class Uploader
     private function getFilePath()
     {
         $fullname = $this->fullName;
-        $rootPath = WEB_PATH;
+        $rootPath = $_SERVER['DOCUMENT_ROOT'];
 
         if (substr($fullname, 0, 1) != '/') {
             $fullname = '/' . $fullname;

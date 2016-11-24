@@ -14,7 +14,9 @@
             <p>
                 <label>所属栏目</label>
                 <select name="cate">
-
+                    <volist name="data" id="vo">
+                        <option value="{$vo.cid}">{$vo.cate_name}</option>
+                    </volist>
                 </select>
             </p>
             <p>
@@ -27,22 +29,21 @@
             </p>
             <p>
                 <label>添加时间</label>
-                <input type="text" name="add_time" />
+                <input type="text" name="add_time" value="{$currentTime}"/>
             </p>
             <p>
                 <label>内容</label>
-                <textarea>
-
-                </textarea>
+                    <include file="demo" />
             </p>
-            <p>
-                <label>是否显示</label>
-                <input type="text" name="status" />
-            </p>
-            <p>
-                <label>排序</label>
-                <input type="text" name="ord" />
-            </p>
+            <!--<p>-->
+                <!--<label>是否显示</label>-->
+                <!--<input type="radio" name="status"  value="1" checked="checked"/> 显示-->
+                <!--<input type="radio" name="status" value="0"/> 屏蔽-->
+            <!--</p>-->
+            <!--<p>-->
+                <!--<label>排序</label>-->
+                <!--<input type="text" name="ord" value="0"/>-->
+            <!--</p>-->
             <p>　　　　　　　　　　　　　　　　　　　　<!--此处有十个实体空格-->
                 <input type="submit" value="提交" />
             </p>

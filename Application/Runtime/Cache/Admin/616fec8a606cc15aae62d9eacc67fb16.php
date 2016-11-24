@@ -24,7 +24,7 @@
             <p>
                 <label>所属栏目</label>
                 <select name="cate">
-
+                    <?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo["cid"]); ?>"><?php echo ($vo["cate_name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
                 </select>
             </p>
             <p>
@@ -37,23 +37,34 @@
             </p>
             <p>
                 <label>添加时间</label>
-                <input type="text" name="add_time" />
+                <input type="text" name="add_time" value="<?php echo ($currentTime); ?>"/>
             </p>
             <p>
                 <label>内容</label>
-                <textarea>
+                    <!-- 加载编辑器的容器 -->
+<script id="container" name="content" type="text/plain" cols="10" rows="20">
+点击这里开始编辑你的文章...
+</script>
+<!-- 配置文件 -->
+<script type="text/javascript" src="../../../../Public/js/ue/ueditor.config.js"></script>
+<!-- 编辑器源码文件 -->
+<script type="text/javascript" src="../../../../Public/js/ue/ueditor.all.js"></script>
+<!-- 实例化编辑器 -->
+<script type="text/javascript">
+    var ue = UE.getEditor('container');
+</script>
 
-                </textarea>
             </p>
-            <p>
-                <label>是否显示</label>
-                <input type="text" name="status" />
-            </p>
-            <p>
-                <label>排序</label>
-                <input type="text" name="ord" />
-            </p>
-            <p>　　　　　　　　　　　　　　　　　　　　
+            <!--<p>-->
+                <!--<label>是否显示</label>-->
+                <!--<input type="radio" name="status"  value="1" checked="checked"/> 显示-->
+                <!--<input type="radio" name="status" value="0"/> 屏蔽-->
+            <!--</p>-->
+            <!--<p>-->
+                <!--<label>排序</label>-->
+                <!--<input type="text" name="ord" value="0"/>-->
+            <!--</p>-->
+            <p>　　　　　　　　　　　　　　　　　　　　<!--此处有十个实体空格-->
                 <input type="submit" value="提交" />
             </p>
         </form>
