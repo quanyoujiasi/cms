@@ -1,0 +1,51 @@
+<include file="Public/header" />
+    <div class="content">
+        <div class="title">
+            添加文章
+        </div>
+        <div class="mess">
+            <span>请按照格式添加!</span>
+        </div>
+        <form action="{:U('Admin/Article/addAction')}" method="post" >
+            <p>
+                <label>文章标题</label>
+                <input type="text" name="title" />
+            </p>
+            <p>
+                <label>所属栏目</label>
+                <select name="cate">
+
+                </select>
+            </p>
+            <p>
+                <label>文章简介</label>
+                <input type="text" name="description" />
+            </p>
+            <p>
+                <label>作者</label>
+                <input type="text" name="author" />
+            </p>
+            <p>
+                <label>添加时间</label>
+                <input type="text" name="add_time" />
+            </p>
+            <p>
+                <label>内容</label>
+                <textarea>
+
+                </textarea>
+            </p>
+            <p>
+                <label>是否显示</label>
+                <input type="text" name="status" />
+            </p>
+            <p>
+                <label>排序</label>
+                <input type="text" name="ord" />
+            </p>
+            <p>　　　　　　　　　　　　　　　　　　　　<!--此处有十个实体空格-->
+                <input type="submit" value="提交" />
+            </p>
+        </form>
+    </div>
+<include file="Public/footer" />
