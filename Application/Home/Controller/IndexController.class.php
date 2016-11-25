@@ -5,6 +5,8 @@ class IndexController extends Controller
 {
     public function index()
     {
-        echo '欢迎来到cms';
+        $data = D('Article')->getArticle();
+        $this->assign('data',$data);
+        $this->display();
     }
 }

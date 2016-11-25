@@ -43,7 +43,7 @@ class ArticleController extends Controller {
      * 显示文章列表
      */
     public function ArticleList(){
-    	$data = D('article')->getArticle();
+    	$data = D('Aarticle')->getArticle();
         $this->assign('data',$data);
         $this->display('ArticleList');
     }
