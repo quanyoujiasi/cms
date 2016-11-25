@@ -17,4 +17,12 @@ class ArticleModel extends Model {
         $this->create($data);
         return $this->add();
     }
+
+    /**
+     * 获取文章列表
+     * @return mixed
+     */
+    public function getArticle(){
+        return $this->select();
+    }
 }
