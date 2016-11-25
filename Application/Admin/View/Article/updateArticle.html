@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<div class="content">
+    <div class="title">
+        修改文章
+    </div>
+    <div class="mess">
+        <span>请按照格式修改!</span>
+    </div>
+    <form action="{:U('Admin/Article/updateAction')}" method="post" >
+        <p><input type="hidden" name="aid" value="{$data[0]['aid']}"></p>
+        <p>
+            <label>文章标题</label>
+            <input type="text" name="title" value="{$data[0]['title']}" />
+        </p>
+        <p>
+            <label>所属栏目</label>
+            <p style="color:red">{$data[0]['cate_name']}　不能被修改</p>
+        </p>
+        <p>
+            <label>文章简介</label>
+            <input type="text" name="descrption" value="{$data[0]['descrption']}" />
+        </p>
+        <p>
+            <label>作者</label>
+            <input type="text" name="author" value="{$data[0]['author']}" />
+        </p>
+        <p>
+            <label>添加时间</label>
+             <p style="color:blue">时间自己生成</p>
+        </p>
+        <p>
+            <label>内容</label>
+            <include file="demo" />
+        </p>
+        <p>
+            <label>是否显示</label>
+            <eq name="$data[0]['status']" value="1">
+                <input type="radio" name="status" value="1" checked="checked"/> 显示
+                <input type="radio" name="status" value="0"/> 屏蔽
+                <else />
+                <input type="radio" name="status"  value="1" /> 显示
+                <input type="radio" name="status" value="0" checked="checked"/> 屏蔽
+            </eq>
+        </p>
+        <p>
+            <label>排序</label>
+            <input type="text" name="ord" value="{$data[0]['a_order']}"/>
+        </p>
+        <p>　　　　　　　　　　　　　　　　　　　　<!--此处有十个实体空格-->
+            <input type="submit" value="提交" />
+        </p>
+    </form>
+</div>
+</body>
+</html>

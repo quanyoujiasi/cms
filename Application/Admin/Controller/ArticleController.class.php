@@ -34,31 +34,69 @@ class ArticleController extends Controller {
         $data['content']    = htmlspecialchars(I('post.content'));
         $res = D('Article')->addArticle($data);//把文章内容插入数据库
         if ($res) {
-            return $this->redirect('article/index');
+            return $this->redirect('Article/addArticle','添加成功',2);
         }
-        return $this->error('添加文章失败');
+            return $this->error('添加文章失败');
     }
-<<<<<<< HEAD
+
     /**
      * 获取文章列表操作
-=======
+
 
     /**
      * 显示文章列表
->>>>>>> c77bd63c93729f58718b14cf49bdf6d88b59516d
+
      */
     public function ArticleList(){
-    	$data = D('Aarticle')->getArticle();
+    	$data = D('Article')->getArticle();
         $this->assign('data',$data);
         $this->display('ArticleList');
     }
+
+    /**
+     *删除文章
+     *
+     */
     public function delArticle(){
         $data['aid']=I('get.aid');
-        if(D('article')->delArticle($data))
+        if(D('Article')->delArticle($data))
         {
             $this->success('删除成功','ArticleList',2);
         }else{
             $this->error('删除失败',2);
         }
+    }
+    /**
+     * 更新文章
+     */
+    public function updateArticle(){
+        $data =I('get.aid');
+        $data=D('Article')->where('aid='.$data)->getArticle();
+        $cate_name=D('Cate')->getCateName($data);
+        $data[0]['cate_name']=$cate_name['cate_name'];
+//        var_dump($data);die;
+        $this->assign('data',$data);
+        $this->display('updateArticle');
+    }
+
+    /**
+     * 获取更新文章的数据入库
+     */
+    public function updateAction(){
+        $aid=I('post.aid');
+        $data['addtime']=time();
+        $data['title']=I('post.title');
+        $data['descrption']=I('post.descrption');
+        $data['author']=I('post.author');
+        $data['content']=I('post.content');
+        $data['status']=I('post.status');
+        $data['a_order']=I('post.ord');
+//        var_dump($data['a_order']);die;
+        $data=D('Article')->where('aid='.$aid)->saveArticle($data);
+         if($data){
+             $this->success('更新成功','ArticleList',3);
+         }else{
+             $this->error('更新失败',2);
+         }
     }
 }

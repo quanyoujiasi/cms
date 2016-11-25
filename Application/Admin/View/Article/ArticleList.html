@@ -21,18 +21,18 @@
 
         <volist name="data" id="vo">
             <tr>
-            <td>{$vo.aid}</td>
-            <td>{$vo.title}</td>
-            <td>{$vo.cid}</td>
-            <td>{$vo.descrption}</td>
-            <td>{$vo.author}</td>
-            <td>{$vo.addtime}</td>
-            <td>{$vo.content}</td>
-            <td>{$vo.status}</td>
-            <td>{$vo.a_ord}</td>
-            <td><a href="">更新</a><a href="{:U('Admin/index/delArticle')}?aid={$vo.aid}">删除</a></td>
+                <td>{$vo.aid}</td>
+                <td>{$vo.title}</td>
+                <td>{$vo.cid}</td>
+                <td>{$vo.descrption}</td>
+                <td>{$vo.author}</td>
+                <td>{$vo.addtime}</td>
+                <td>{$vo.content}</td>
+                <td>{$vo.status}</td>
+                <td>{$vo.a_order}</td>
+                <td><a href="{:U('Admin/Article/updateArticle')}">更新</a><a href="{:U('Admin/Article/delArticle')}?aid={$vo.aid}">删除</a></td>
 
-        </tr>
+            </tr>
         </volist>
     </table>
 

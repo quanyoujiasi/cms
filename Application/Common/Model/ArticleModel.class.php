@@ -3,14 +3,14 @@ namespace Common\Model;
 use Think\Model;
 
 /**
- * ÎÄÕÂÄ£ĞÍ
+ * ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½
  * Class ArticleModel
  * @package Common\Model
  */
 class ArticleModel extends Model {
     /**
-     * Ìí¼ÓÎÄÕÂ
-     * @param array $data ÎÄÕÂµÄÊı¾İ
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+     * @param array $data ï¿½ï¿½ï¿½Âµï¿½ï¿½ï¿½ï¿½ï¿½
      * @return mixed
      */
     public function addArticle($data) {
@@ -19,10 +19,16 @@ class ArticleModel extends Model {
     }
 
     /**
-     * »ñÈ¡ÎÄÕÂÁĞ±í
+     * ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½Ğ±ï¿½
      * @return mixed
      */
     public function getArticle(){
         return $this->select();
+    }
+    public function delArticle($data){
+        return $this->data($data)->delete();
+    }
+    public function saveArticle($data){
+        return $this->data($data)->save();
     }
 }
