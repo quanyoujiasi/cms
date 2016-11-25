@@ -21,4 +21,9 @@ class ArticleController extends Controller {
         $data['content'] = htmlspecialchars(I('post.content'));
         $res = D('Article')->addArticles($data);//把文章内容插入数据库
     }
+    public function ArticleList(){
+    	$data=D('article')->getArticle();
+        $this->assign('data',$data);
+        $this->display('ArticleList');
+    }
 }
