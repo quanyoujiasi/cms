@@ -42,9 +42,21 @@ class ArticleController extends Controller {
         }
         return $this->error('添加文章失败');
     }
+    /**
+     * 获取文章列表操作
+     */
     public function ArticleList(){
     	$data=D('article')->getArticle();
         $this->assign('data',$data);
         $this->display('ArticleList');
+    }
+    public function delArticle(){
+        $data['aid']=I('get.aid');
+        if(D('article')->delArticle($data))
+        {
+            $this->success('删除成功','ArticleList',2);
+        }else{
+            $this->error('删除失败',2);
+        }
     }
 }

@@ -30,7 +30,7 @@
             <td>{$vo.content}</td>
             <td>{$vo.status}</td>
             <td>{$vo.a_ord}</td>
-            <td><a href="">更新</a><a href="">删除</a></td>
+            <td><a href="">更新</a><a href="{:U('Admin/index/delArticle')}?aid={$vo.aid}">删除</a></td>
 
         </tr>
         </volist>
