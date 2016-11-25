@@ -42,4 +42,9 @@ class ArticleController extends Controller {
         }
         return $this->error('添加文章失败');
     }
+    public function ArticleList(){
+    	$data=D('article')->getArticle();
+        $this->assign('data',$data);
+        $this->display('ArticleList');
+    }
 }
